@@ -127,10 +127,6 @@ Sub AllStocksAnalysis()
 
    Next i
 
-End Sub
-
-Sub formatAllStocksAnalysisTable()
-
     'Formatting
     Worksheets("All Stocks Analysis").Activate
     
@@ -192,5 +188,15 @@ End Sub
 Sub ClearWorksheet()
 
     Cells.Clear
+    
+End Sub
+
+Sub yearValueAnalysis()
+
+    yearValue = InputBox("What year would you like to run the analysis on?")
+    
+    Range("A1").Value = "All Stocks (" + yearValue + ")"
+    
+    Sheets(yearValue).Activate
     
 End Sub
