@@ -188,3 +188,9 @@ Sub formatAllStocksAnalysisTable()
     Next i
     
 End Sub
+
+Sub ClearWorksheet()
+
+    Cells.Clear
+    
+End Sub
