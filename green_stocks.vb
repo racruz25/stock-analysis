@@ -145,4 +145,46 @@ Sub formatAllStocksAnalysisTable()
     
     Columns("B").AutoFit
     
+    'Color Conditioning
+    If Cells(4, 3) > 0 Then
+    
+        'Color the cell green
+        Cells(4, 3).Interior.Color = vbGreen
+        
+        ElseIf Cells(4, 3) < 0 Then
+        
+        'Color the cell red
+        Cells(4, 3).Interior.Color = vbRed
+        
+        Else
+        'Clear the cell color
+        Cells(4, 3).Interior.Color = xlNone
+        
+    End If
+    
+    'Loop to review all returns
+    dataRowStart = 4
+    dataRowEnd = 15
+    
+    For i = dataRowStart To dataRowEnd
+        
+        If Cells(i, 3) > 0 Then
+
+            'Change cell color to green
+            Cells(i, 3).Interior.Color = vbGreen
+            
+        ElseIf Cells(i, 3) < 0 Then
+
+            'Change cell color to red
+            Cells(i, 3).Interior.Color = vbRed
+        
+        Else
+
+            'Clear the cell color
+            Cells(i, 3).Interior.Color = xlNone
+
+        End If
+        
+    Next i
+    
 End Sub
