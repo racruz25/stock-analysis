@@ -74,4 +74,27 @@ Sub AllStocksAnalysis()
     Cells(3, 2).Value = "Total Daily Volume"
     Cells(3, 3).Value = "Return"
 
+    'Assigning values to items in array
+    Dim tickers(11) As String
+    
+    tickers(0) = "AY"
+    tickers(1) = "CSIQ"
+    tickers(2) = "DQ"
+    tickers(3) = "ENPH"
+    tickers(4) = "FSLR"
+    tickers(5) = "HASI"
+    tickers(6) = "JKS"
+    tickers(7) = "RUN"
+    tickers(8) = "SEDG"
+    tickers(9) = "SPWR"
+    tickers(10) = "TERP"
+    tickers(11) = "VSLR"
+
+    For i = 0 To 11
+        ticker = tickers(i)
+        
+        'Run ticker
+        
+    Next i
+
 End Sub
