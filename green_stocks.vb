@@ -1,5 +1,3 @@
-'Green Stocks
-
 Sub MacroCheck()
 
  Dim testMessage As String
@@ -95,12 +93,12 @@ Sub AllStocksAnalysis()
    RowCount = Cells(Rows.Count, "A").End(xlUp).Row
 
    '4) Loop through tickers
-   For i = 0 to 11
+   For i = 0 To 11
        ticker = tickers(i)
        totalVolume = 0
        '5) loop through rows in the data
        Worksheets("2018").Activate
-       For j = 2 to RowCount
+       For j = 2 To RowCount
            '5a) Get total volume for current ticker
            If Cells(j, 1).Value = ticker Then
 
@@ -129,4 +127,22 @@ Sub AllStocksAnalysis()
 
    Next i
 
+End Sub
+
+Sub formatAllStocksAnalysisTable()
+
+    'Formatting
+    Worksheets("All Stocks Analysis").Activate
+    
+    'Formatting
+    Worksheets("All Stocks Analysis").Activate
+    Range("A3:C3").Font.Bold = True
+
+    Range("A3:C3").Borders(xlEdgeBottom).LineStyle = xlContinuous
+    
+    Range("B4:B15").NumberFormat = "#,##0"
+    Range("C4:C15").NumberFormat = "0.00%"
+    
+    Columns("B").AutoFit
+    
 End Sub
