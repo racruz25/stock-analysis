@@ -86,7 +86,7 @@ Sub AllStocksAnalysisRefactored()
         
         Worksheets("All Stocks Analysis").Activate
         Cells(4 + i, 1).Value = tickers(i)
-        Cells(4 + i, 2).Value = tickerVolumes
+        Cells(4 + i, 2).Value = tickerVolumes(i)
         Cells(4 + i, 3).Value = tickerEndingPrices(i) / tickerStartingPrices(i) - 1
         
     Next i

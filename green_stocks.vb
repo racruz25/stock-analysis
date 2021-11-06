@@ -1,13 +1,3 @@
-Sub MacroCheck()
-
- Dim testMessage As String
- 
- testMessage = "Hello World!"
- 
- MsgBox (testMessage)
-
-End Sub
-
 Sub DQAnalysis()
     Worksheets("DQ Analysis").Activate
 
@@ -73,7 +63,7 @@ Sub AllStocksAnalysis()
     
    '1) Format the output sheet on All Stocks Analysis worksheet
    Worksheets("All Stocks Analysis").Activate
-   Range("A1").Value = "All Stocks (2018)"
+   Range("A1").Value = "yearValue"
    'Create a header row
    Cells(3, 1).Value = "Ticker"
    Cells(3, 2).Value = "Total Daily Volume"
@@ -97,7 +87,7 @@ Sub AllStocksAnalysis()
    Dim startingPrice As Single
    Dim endingPrice As Single
    '3b) Activate data worksheet
-   Worksheets("2018").Activate
+   Worksheets(yearValue).Activate
    '3c) Get the number of rows to loop over
    RowCount = Cells(Rows.Count, "A").End(xlUp).Row
 
@@ -106,7 +96,7 @@ Sub AllStocksAnalysis()
        ticker = tickers(i)
        totalVolume = 0
        '5) loop through rows in the data
-       Worksheets("2018").Activate
+       Worksheets(yearValue).Activate
        For j = 2 To RowCount
            '5a) Get total volume for current ticker
            If Cells(j, 1).Value = ticker Then
@@ -203,5 +193,6 @@ Sub ClearWorksheet()
     Cells.Clear
     
 End Sub
+
 
 
